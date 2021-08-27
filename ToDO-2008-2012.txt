@@ -1,0 +1,48 @@
+> Passo 1: DONE
+
+Criar campo ArticleKey com Year & "_" & ArticleID 
+Eliminar coluna LicenseFile
+Mudar File para ArticleKey & "-" & Type
+
+> Passo 2
+
+AuList
+Extrair todos os autores para uma lista de dicionários Pyhton com formato:
+[{'email':, 'FName':, 'LName':, 'Inst':}]
+GARANTIR que email é ÚNICO!
+
+> Passo 3
+
+ArtList
+Extrair todos os artigos para lista de dicionários Python com formato:
+[{'ArticleKey':, 'Title':, 'Type':, 'PStart':, 'PEnd':, 'Year':, 'Acronym':,'File':}]
+
+> Passo 3a
+
+Extrair todos os PDfs em  ArtList
+
+> Passo4
+
+Au_x_Art
+Criar relação entre Autor e Artigos, incluindo o nome da LicenseFile
+
+The 'state' attribute will iterate in "not sent", "sent", "sent failed", "authorized", "not authorized"
+
+[{'email':,'Au_ndx':,'LicenseFile':,'articles':[(ArticleKey,Art_ndx)], 'state':]
+
+> Passo 5 
+
+Criar todas as LicenseFile (1 por autor)
+
+> Passo 6
+
+Enviar email
+
+> Passo 7
+
+Art_x_Au
+Criar um índice por artigo contendo os autores e o state
+
+The 'state' attribute will iterate in "not init", "sent", "sent failed", "authorized", "not authorized"
+
+[{'ArticleKey', 'Art_ndx:, 'authors':[(email,Au_ndx)], 'state':]
